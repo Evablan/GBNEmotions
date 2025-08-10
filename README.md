@@ -1,61 +1,133 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# GBNEmotions
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive web application for monitoring and analyzing employee emotional well-being in corporate environments. Built with Laravel framework, this system provides real-time insights into workplace climate and organizational health.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Core Functionality
+- **Employee Authentication System** with role-based access (Admin/Employee)
+- **Daily Emotion Registration** with 5 emotional states (Happy, Neutral, Frustrated, Tense, Calm)
+- **Dynamic Questionnaires** tailored to each selected emotion
+- **Real-time Administrative Dashboard** with comprehensive statistics
+- **Department-based Filtering** for targeted analysis
+- **Multilingual Support** (English, Spanish, French)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Technical Features
+- **Responsive Design** with modern UI/UX
+- **External API Integration** for employee data synchronization
+- **Secure Authentication** using Laravel Breeze
+- **Database Relationships** between users, departments, and emotions
+- **Statistical Analysis** with percentage calculations and trends
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Technologies
 
-## Learning Laravel
+- **Backend:** Laravel 12, PHP 8.2
+- **Database:** MySQL with Eloquent ORM
+- **Frontend:** Blade templates, Tailwind CSS, JavaScript
+- **Authentication:** Laravel Breeze
+- **Version Control:** Git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📊 Current Status
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**Development Phase:** Active Development
+- ✅ Core functionality implemented
+- ✅ User authentication system
+- ✅ Emotion registration interface
+- ✅ Administrative dashboard
+- ✅ Multilingual support
+- ✅ Database structure
+- 🔄 Additional features in progress
+- 🔄 UI/UX improvements ongoing
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🖼️ Screenshots
 
-## Laravel Sponsors
+### Employee Emotion Registration Interface
+![Employee Interface](screenshots/employee-interface.png)
+*Intuitive emotion selection with dynamic questionnaires*
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Administrative Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+*Real-time statistics and department filtering capabilities*
 
-### Premium Partners
+## 📋 Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Evablan/GBNEmotions.git
+   cd GBNEmotions
+   ```
 
-## Contributing
+2. **Install dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. **Environment setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Code of Conduct
+4. **Database configuration**
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. **Start the application**
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
 
-## Security Vulnerabilities
+## 🎯 Usage
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### For Employees
+1. Access the emotion registration form
+2. Select your current emotional state
+3. Answer contextual questions based on your emotion
+4. Submit your daily emotional check-in
 
-## License
+### For Administrators
+1. Access the administrative dashboard
+2. View real-time statistics and trends
+3. Filter data by department
+4. Analyze emotional patterns across the organization
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🔧 Configuration
+
+### External API Setup
+The application integrates with an external API for employee data. Configure the API endpoint in your environment:
+```
+EXTERNAL_API_URL=http://127.0.0.1:8001/api/employee-uuids
+```
+
+### Language Configuration
+Supported languages are configured in the `lang/` directory:
+- English (`en/`)
+- Spanish (`es/`)
+- French (`fr/`)
+
+## 📈 Project Goals
+
+- **Improve workplace well-being** through emotional monitoring
+- **Provide data-driven insights** for organizational decision-making
+- **Enhance employee engagement** through regular check-ins
+- **Support HR initiatives** with comprehensive emotional analytics
+
+## 🤝 Contributing
+
+This project is currently in active development. Contributions and feedback are welcome as we continue to enhance the system's capabilities.
+
+## 📝 License
+
+This project is developed for GBN organization. All rights reserved.
+
+## 📞 Contact
+
+For questions or support regarding GBNEmotions, please contact the development team.
+
+---
+
+**Note:** This project is currently under active development. Some features may be in progress or subject to change.
